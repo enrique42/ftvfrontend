@@ -1,0 +1,7 @@
+- jQuery e jQueryUI: utilizados na interface do site e na construção do código do programa.
+- d3.min.js / d3.tip.js : Pacote D3 para visualização de dados, e plugin para tooltips (janelas de informação no hover).
+- Metricsgraphics.min.js: Plugin do D3 para insteração com gráficos temporais
+- jQAllRangeSliders-min.js: biblioteca para utilização de sliders de range dinâmicos, utilizados nos filtros das visualizações
+- mustache.min.js: Plugin de template de JS, utilizado para atualização dos modais na interface (janelas de listas de sinais, adicionar e editar sinais).
+- topojson.v1.json.js: biblioteca para interpretação de mapas em JSON (utilizados nas visualizações geolocalizadas)
+- baseform.json: arquivo JSON contendo dados utilizados pelo programa, além de alguns objetos de teste.

@@ -1,0 +1,316 @@
+/*******
+  JANELA DADOS
+********/
+
+.janela-dados, .janela-save{
+  width: 48%;
+  height: 80%;
+  position: fixed;
+  top: 10%;
+  right: 4%;
+  padding: 20px;
+  z-index: 99999;
+  transition: all 1s ease-in;
+  transform: translate3d(0, -2000px, 0);
+  &.ativo{
+    display: block;
+    transform: translate3d(0, 0, 0);
+  }
+  .janela-container{
+    width: 100%;
+    height: 100%;    
+    position: relative;
+    overflow: auto;
+    .close-janela, .close-janela-save{
+      font-size: 32px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  .texto-autor{
+    height: 100px;
+    h3{
+      font-size: 28px;
+      font-weight: 800;
+    }
+    .link-perfil{
+      font-size: 16px;
+      text-transform: lowercase;
+      display: block;
+      margin-bottom: 10px;
+    }
+    h4{
+      color: #565656;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+  }
+  .lista-tweets{
+    .tweet-single{
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #dfdfdf;
+      #dados-data{
+        margin-bottom: 10px;
+      }
+      .texto-tweet{
+        font-family: $fserifa;
+        color: #565656;
+        font-size: 20px;
+        line-height: 1.25;
+        font-style: italic;
+        margin-bottom: 15px;
+      }
+      #dados-ret{
+      }
+    }
+  }
+}
+
+#form_savesignal{
+  padding: 0;
+  select{
+    display: block;
+  }
+}
+
+.invisible-row{
+  display: none;
+}
+
+.input-field{
+  position: relative;
+  label{
+    top: -30px;
+  }
+  label.text{
+    top: -20px;
+  }
+  label.check{
+    position: static;
+    top: auto;
+    padding-left: 5px;
+    color: #000;
+  }
+  & > label{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+    border-bottom: 2px solid $corfundo;
+  }
+  .habilita-subtema{
+    padding: 15px 10px;
+    border: 1px solid #dfdfdf;
+    cursor: pointer;
+  }
+  .lista-subtemas{
+    width: 200%;
+    position: absolute;
+    top: -8px;
+    right: 13px;
+    height: auto;
+    z-index: 999;
+    padding: 20px;
+    background-color: #fff;
+    display: none;
+    &.ativo{
+      display: block;
+    }
+    div{
+      margin-bottom: 10px;
+    }
+    h3{
+      height: 40px;
+      line-height: 40px;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .close-subtema{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 32px;
+    }
+    .colunas-subtemas{
+      width: 100%;
+      -moz-column-count: 3;
+        -moz-column-gap:normal;
+        -webkit-column-count: 3;
+        -webkit-column-gap: normal;
+        column-count: 3;
+        column-gap:normal;
+    }
+  }
+} 
+
+.if-salvar{
+  position: relative;
+  .sucesso{
+    position: absolute;
+    top: 0;
+    right: 180px;
+    line-height: 32px;
+    @include transition(all 0.6s);
+    opacity: 0;
+    &.ativo{
+      opacity: 1;
+    }
+  }
+}
+
+.janela-save{
+  display: block;
+  width: 40%;
+  height: 100%;
+  position: fixed;
+  top: -10px;
+  right: auto;
+  left: -100%;
+  padding: 20px;
+  z-index: 99999;
+  transition: all 1.2s ease-in;
+  transform: translate3d(0, 0, 0);
+  &.ativo{
+    left: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  .texto-autor{
+    height: auto;
+    margin-bottom: 1em;
+  }
+
+  h4{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  .input-field{
+    margin-bottom: 1em;
+  }
+  textarea{
+    height: 100px;
+  }
+  .lista-tweets-save{
+    margin-bottom: 20px;
+    .orange-text{
+      margin-bottom: 10px;
+    }
+    .texto-tweet{
+      font-family: $fserifa;
+      color: #565656;
+      font-size: 24px;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    #dados-ret{
+    }
+  }
+}
+
+#janela-filtros{
+  width: 40%;
+  height: auto;
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  background-color: #fff;
+  padding: 20px;
+  z-index: 50;
+  @include transition(all 1.2s);
+  &.ativo{
+    bottom: 0;
+  }
+  .bloco-filtros{
+    width: 100%;
+    height: auto;
+    position: relative;
+    h3{
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .close-janela-filtros{
+      font-size: 32px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+#janela-mostra-sinais{
+  width: 50%;
+  height: 60%;
+  position: fixed;
+  top: 120%;
+  left: 25%;
+  background-color: #fff;
+  padding: 20px;
+  z-index: 50;
+  @include transition(all 1.2s);
+  &.ativo{
+    top: 20%;
+  }
+  .bloco-sinais{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: auto;
+    h3{
+      font-weight: bold;
+      font-size: 24px;
+    }
+    #desc-sinais{
+      font-size: 18px;
+      margin-bottom: 1em;
+    }
+    .close-janela-mostra-sinais{
+      font-size: 32px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+.sinais-single{
+  margin-bottom: 1em;
+  strong{
+    font-weight: bold;
+  }
+  .sinal-desc,.sinal-desc-info{
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .sinal-linha{
+    margin-bottom: 5px;
+    .sinal-texto{
+      display: inline-block;
+      width: 49%;
+      font-size: 14px;
+      span{
+        font-weight: bold;
+      }
+    }
+  }
+  .sinal-linha.sl-simples{
+    .sinal-texto{
+      width: 100%;
+    }
+  }
+  .sinal-texto-titulo{
+    font-size: 20px !important;
+    color: $corfundo;
+    font-weight: bold;
+    span{
+      font-weight: bold;
+      font-size: 20px !important;
+    }
+  }
+  
+}
+
+.sinal-invisivel{
+  display: none;
+}
